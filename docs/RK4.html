@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ODE_Solver &mdash; ODE_Solver 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ODE_Solver
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">ODE_Solver</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ODE_Solver</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ODE_Solver</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/RK4.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ode-solver">
+<span id="id1"></span><h1>ODE_Solver<a class="headerlink" href="#ode-solver" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ODE_Solver"></span><dl class="py function">
+<dt id="ODE_Solver.Solver">
+<code class="sig-prename descclassname"><span class="pre">ODE_Solver.</span></code><code class="sig-name descname"><span class="pre">Solver</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dzdx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_f</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dydx_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ODE_Solver.Solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>ODE Solver</p>
+<p>Solves second order ODEs with Runge Kutta 4th order method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dzdx</strong> (<em>function</em>) – This is the slope of z (y’) with respect to x.</p></li>
+<li><p><strong>x_i</strong> (<em>float</em>) – Initial value of x</p></li>
+<li><p><strong>x_f</strong> (<em>float</em>) – Final value of x</p></li>
+<li><p><strong>y_i</strong> (<em>float</em>) – Intial y condition</p></li>
+<li><p><strong>dydx_i</strong> (<em>float</em>) – Initial y’ condition</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – This is the step size from current value of x to its successive value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>It contains all the values of x, y and z (y’) from all the iterations</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ODE_Solver.Solver_with_AdSS">
+<code class="sig-prename descclassname"><span class="pre">ODE_Solver.</span></code><code class="sig-name descname"><span class="pre">Solver_with_AdSS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dzdx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_f</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dydx_i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_diff</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ODE_Solver.Solver_with_AdSS" title="Permalink to this definition">¶</a></dt>
+<dd><p>ODE Solver with Adaptive Step Sizing</p>
+<p>Solves ODE with Runge kutta 4th order method. Adaptive Step Sizing helps in speeding up ODEs with lot of flat slopes in its solution
+and helps in collecting necessary datapoints, discarding fillers. It adapts it self to the curve by changing the step size appropriately.
+Adaptive step sizing can slow down simple ODEs and ODEs with lot of steeper slopes but a trade off with rich data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dzdx</strong> (<em>function</em>) – This is the slope of z (y’) with respect to x.</p></li>
+<li><p><strong>x_i</strong> (<em>float</em>) – Initial value of x</p></li>
+<li><p><strong>x_f</strong> (<em>float</em>) – Final value of x</p></li>
+<li><p><strong>y_i</strong> (<em>float</em>) – Intial y condition</p></li>
+<li><p><strong>dydx_i</strong> (<em>float</em>) – Initial y’ condition</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – This is the step size from current value of x to its successive value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Other Parameters</dt>
+<dd class="field-even"><p><strong>min_diff</strong> (<em>float</em>) – This is the minimum tolerance of difference of y between current step size and its half or double step size</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>It contains all the values of x, y and z (y’) from all the iterations</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ODE_Solver.Update_vars">
+<code class="sig-prename descclassname"><span class="pre">ODE_Solver.</span></code><code class="sig-name descname"><span class="pre">Update_vars</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ODE_Solver.Update_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updation of variables</p>
+<p>Updates the variables x, y, z (y’) in respect to the input function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>function</em>) – This is the slope of z (y’) with respect to x.</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – This is the step size from current value of x to its successive value</p></li>
+<li><p><strong>x_n</strong> (<em>float</em>) – Value of x after ‘n’ iterations</p></li>
+<li><p><strong>y_n</strong> (<em>float</em>) – Value of y after ‘n’ iterations</p></li>
+<li><p><strong>z_n</strong> (<em>float</em>) – Value of z(y’) after ‘n’ iterations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>It contains the values of x, y and z (y’) for the current iteration</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Rahul Priyadharshan, Vaibhavi Gawas, Vikash Kotteeswaran.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
